@@ -8,9 +8,6 @@
 import Foundation
 import SwiftUI
 
-
-import Foundation
-import SwiftUI
 class DietPlanViewModel: ObservableObject {
     
     @Published var diets: [Diet] = []

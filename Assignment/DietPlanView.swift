@@ -17,14 +17,14 @@ struct DietPlanView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 16) {
-                // Header
+            //heading
                 HStack {
                     Text("Everyday Diet Plan")
                         .font(.title)
                         .fontWeight(.bold)
                     Spacer()
                     Button(action: {
-                        // Grocery List Action
+                        
                     }) {
                         Image(systemName: "cart")
                             .foregroundColor(.black)
@@ -45,13 +45,13 @@ struct DietPlanView: View {
                 } else {
                     ScrollView {
                         VStack(spacing: 24) {
-                            // Diet Streak Section
+                            
                             streakCard
                             
-                            // Search Bar
+                          
                             searchBar
                             
-                            // Meals Sections
+                          
                             ForEach(viewModel.diets) { diet in
                                 mealSection(diet: diet)
                             }
@@ -80,7 +80,7 @@ struct DietPlanView: View {
             .cornerRadius(10)
             
             Button(action: {
-                // Filter action
+                // koi Action
             }) {
                 Image(systemName: "line.horizontal.3.decrease")
                     .foregroundColor(.black)
@@ -166,7 +166,7 @@ struct DietPlanView: View {
                 }
                 Spacer()
                 
-                // Select All Button
+                // Select But
                 Button(action: {
                     toggleSelectAll(for: diet)
                 }) {
@@ -208,7 +208,7 @@ struct DietPlanView: View {
         
         return VStack(alignment: .leading, spacing: 12) {
             HStack {
-                // Checkbox
+            
                 Button(action: {
                     toggleMealSelection(mealId)
                 }) {
@@ -221,7 +221,7 @@ struct DietPlanView: View {
                     .foregroundColor(.gray)
                 Spacer()
                 Button(action: {
-                    // Favorite action
+                    
                 }) {
                     Image(systemName: "heart")
                         .foregroundColor(.gray)
@@ -258,7 +258,7 @@ struct DietPlanView: View {
             
             HStack(spacing: 12) {
                 Button(action: {
-                    // Customize Action
+                   
                 }) {
                     HStack {
                         Image(systemName: "slider.horizontal.3")
@@ -272,7 +272,7 @@ struct DietPlanView: View {
                 }
                 
                 Button(action: {
-                    // Feed Action
+                   
                 }) {
                     HStack {
                         Image(systemName: recipe.isCompleted == 1 ? "checkmark" : "plus")
@@ -306,7 +306,7 @@ struct DietPlanView: View {
         }
     }
     
-    // Helper functions for selection functionality
+   
     private func toggleSelectAll(for diet: Diet) {
         let mealIds = diet.recipes.map { "\(diet.daytime)-\($0.id)" }
         
